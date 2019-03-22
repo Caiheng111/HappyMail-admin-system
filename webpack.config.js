@@ -1,0 +1,90 @@
+
+
+const path = require('path');
+const webpack=require('webpack');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+module.exports = {
+  entry: './src/app.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    publicPath:'/dist/',
+    filename: 'js/app.js'
+  },
+  mode:'development',
+  module: {
+    rules: [
+        // react文件的处理
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env','@babel/preset-react']
+          }
+        }
+      },
+    //   css文件的处理
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: "css-loader" 
+          })
+      },
+      //sass文件的处理
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
+      },
+    //   图片的处理
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name:'resource/[name].[ext]'
+            }
+          }
+        ]
+      },
+    //    字体图标的处理
+      {
+        test: /\.(eot|svg|ttf|woff|woff2|otf)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name:'resource/[name].[ext]'
+            }
+          }
+        ]
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './src/index.html'
+    }),
+    // 独立css文件
+    new ExtractTextPlugin("css/[name].css"),
+    //提出公共模块插件
+    new webpack.optimize.SplitChunksPlugin({
+        name:'common',
+        filename:'js/base.js'
+
+    })
+    
+  ],
+  devServer: {
+    port:8086
+      }
+};
