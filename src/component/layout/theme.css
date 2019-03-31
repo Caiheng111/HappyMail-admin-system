@@ -54,7 +54,6 @@ p
 {
 	font-size: 16px;
 	line-height: 25px;
-	padding-top: 20px;
 }
 
 .panel
@@ -261,7 +260,7 @@ p
 .brown
 {
 	background-color: #f0ad4e;
-	color: #fff;
+	color:white;
 }
 
 .back-footer-red

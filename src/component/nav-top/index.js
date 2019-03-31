@@ -3,16 +3,28 @@
 
 import React from 'react';
 import {Link} from 'react-router-dom';
+import MUtil from 'util/mm.js';
+import User from 'service/user-service.js';
 
+const _user=new User();
 
+const _mm=new MUtil();
 
 class NavTop extends React.Component{
     constructor(props){
         super(props);
+        this.state={
+            username:_mm.getStorage('userInfo').username || ''
+        }
     }
 
     onLogOut(){
-
+        _user.logout().then(res=>{
+            _mm.removeStorage('userInfo');
+            window.location.href='/login';
+        },errMsg =>{
+            _mm.errTips(errmsg);
+        });
     }
     render(){
         return (
@@ -26,7 +38,7 @@ class NavTop extends React.Component{
                     <li className="dropdown">
                         <a className="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
                             <i className="fa fa-user fa-fw"></i>
-                            <span>Welcome Admin</span>
+                            <span>Welcome {this.state.username}</span>
                             <i className="fa fa-caret-down"></i>
                         </a>
                         <ul className="dropdown-menu dropdown-user">

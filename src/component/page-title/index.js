@@ -13,9 +13,9 @@ class PageTitle extends React.Component{
     render(){
         return (
 
-        <div classname="row"> 
-            <div classname="col-md-12">
-                <h1 class="page-header">{this.props.title}</h1>
+        <div className="row"> 
+            <div className="col-md-12">
+                <h1 className="page-header">{this.props.title}</h1>
                 {this.props.children}
             </div>
         </div>

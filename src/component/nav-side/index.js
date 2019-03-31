@@ -14,7 +14,7 @@ class NavSide extends React.Component{
                 <div className="sidebar-collapse">
                     <ul className="nav">
                         <li>
-                            <NavLink exact avtive="active-menu" to="/">
+                            <NavLink exact activeClassName="active-menu" to="/">
                                 <i className="fa fa-dashboard"></i> 
                                 <span>Dashbord</span>
                             </NavLink>
@@ -23,7 +23,7 @@ class NavSide extends React.Component{
 
                         <li className="active">
                             <Link to="/product">
-                                <i className="fa fa-sitemap"></i> 
+                                <i className="fa fa-list"></i> 
                                 <span>Product</span> 
                                 <span className="fa arrow"></span>
                             </Link>
@@ -39,7 +39,7 @@ class NavSide extends React.Component{
 
                         <li className="active">
                             <Link to="/order">
-                                <i className="fa fa-sitemap"></i> 
+                                <i className="fa fa-check-square"></i> 
                                 <span>Order</span> 
                                 <span className="fa arrow"></span>
                             </Link>
@@ -52,7 +52,7 @@ class NavSide extends React.Component{
 
                         <li className="active">
                             <Link to="/user">
-                                <i className="fa fa-sitemap"></i> 
+                                <i className="fa fa-user"></i> 
                                 <span>User</span> 
                                 <span className="fa arrow"></span>
                             </Link>
