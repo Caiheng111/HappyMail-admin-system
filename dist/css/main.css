@@ -354,7 +354,7 @@ h4
 
 p
 {
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 25px;
 }
 
@@ -369,6 +369,10 @@ p
 	padding: 8px;
 	width: 30px;
 	text-align: center;
+}
+
+.navbar-side .nav > li span{
+	font-size: 16px;
 }
 
 .top-navbar
@@ -1033,9 +1037,7 @@ ul.nav.nav-second-level.collapse.in
 		padding-top: 14px;
 		font-size: 19px;
 	}
-}.login-pannel {
-  margin-top: 25%; }
-.color-box {
+}.color-box {
   display: block;
   height: 160px;
   text-align: center;
@@ -1056,3 +1058,22 @@ ul.nav.nav-second-level.collapse.in
     margin: 0; }
   .color-box .desc {
     font-size: 18px; }
+.page-header-right {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  cursor: pointer; }
+.login-pannel {
+  margin-top: 25%; }
+.opear {
+  margin-right: 5px; }
+
+.search-wrap {
+  margin-left: 0px;
+  margin-bottom: 20px; }
+  .search-wrap .form-group {
+    margin-right: 10px; }
+.cate-select {
+  width: 200px;
+  margin-right: 15px;
+  display: inline-block; }

@@ -9,8 +9,10 @@ import {Link} from 'react-router-dom';
 import Pagination from 'util/pagination/index.js';
 import MUtil from 'util/mm.js';
 import User from 'service/user-service.js';
+import TableList from 'util/table-list/index.js';
 const _user=new User();
 const _mm=new MUtil();
+
 
 
 class UserList extends React.Component{
@@ -28,7 +30,7 @@ class UserList extends React.Component{
 
     loadUserlList(){
         _user.getUserList(this.state.pageNum).then(res=>{
-            this.setState(res)
+            this.setState(res);
         },errmsg=>{
             _mm.errorTips(errMsg)
         });
@@ -54,33 +56,13 @@ class UserList extends React.Component{
                 </tr>
             );
         });
-
-        let listError=(
-            <tr>
-                <td colSpan="5" className="text-center">can't find relative results</td>
-            </tr>
-        );
-        let tableBody=this.state.list.length>0 ? listBody :listError;
         return (
 
             <div id="page-wrapper">
                 <PageTitle title="User List"/>
-                <div className="col-md-12">
-                    <table className="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>User Name</th>
-                                <th>Emial</th>
-                                <th>Phone number</th>
-                                <th>Sign Up Time</th>
-                            </tr> 
-                        </thead>
-                        <tbody>
-                            {tableBody}
-                        </tbody>
-                    </table>
-                </div>
+                <TableList tableHeads={['ID','User Name','Emial','Phone number','Sign Up Time']}>
+                {listBody}
+                </TableList>
                 <Pagination
                  curent={this.state.pageNum} 
                  total={this.state.total}

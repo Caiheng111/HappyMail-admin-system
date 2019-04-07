@@ -3,6 +3,7 @@
 
 import React from 'react';
 import './theme.css';
+import './index.scss';
 import NavTop from 'component/nav-top/index.js';
 import NavSide from 'component/nav-side/index.js';
 

@@ -52,7 +52,7 @@ h4
 
 p
 {
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 25px;
 }
 
@@ -67,6 +67,10 @@ p
 	padding: 8px;
 	width: 30px;
 	text-align: center;
+}
+
+.navbar-side .nav > li span{
+	font-size: 16px;
 }
 
 .top-navbar
