@@ -1037,7 +1037,14 @@ ul.nav.nav-second-level.collapse.in
 		padding-top: 14px;
 		font-size: 19px;
 	}
-}.color-box {
+}.page-header-right {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  cursor: pointer; }
+.login-pannel {
+  margin-top: 25%; }
+.color-box {
   display: block;
   height: 160px;
   text-align: center;
@@ -1058,13 +1065,6 @@ ul.nav.nav-second-level.collapse.in
     margin: 0; }
   .color-box .desc {
     font-size: 18px; }
-.page-header-right {
-  position: absolute;
-  right: 30px;
-  top: 15px;
-  cursor: pointer; }
-.login-pannel {
-  margin-top: 25%; }
 .opear {
   margin-right: 5px; }
 

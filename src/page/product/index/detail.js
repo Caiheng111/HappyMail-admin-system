@@ -62,7 +62,7 @@ class ProductDetail extends React.Component{
         return (
 
             <div id="page-wrapper">
-                <PageTitle title="Add Product"/>
+                <PageTitle title="Edite Product"/>
                 <div className="form-horizontal">
                 <div className="form-group">
                     <label className="col-md-2 control-label">Product Name</label>

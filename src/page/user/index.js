@@ -31,7 +31,10 @@ class UserList extends React.Component{
     loadUserlList(){
         _user.getUserList(this.state.pageNum).then(res=>{
             this.setState(res);
-        },errmsg=>{
+        },errMsg=>{
+            this.setState({
+                list:[]
+            });
             _mm.errorTips(errMsg)
         });
     }
