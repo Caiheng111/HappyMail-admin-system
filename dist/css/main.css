@@ -1037,13 +1037,13 @@ ul.nav.nav-second-level.collapse.in
 		padding-top: 14px;
 		font-size: 19px;
 	}
-}.page-header-right {
+}.login-pannel {
+  margin-top: 25%; }
+.page-header-right {
   position: absolute;
   right: 30px;
   top: 15px;
   cursor: pointer; }
-.login-pannel {
-  margin-top: 25%; }
 .color-box {
   display: block;
   height: 160px;
