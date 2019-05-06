@@ -53,7 +53,7 @@ class ProductList extends React.Component{
         });
     }
 
-    onSearch(searchKeyword,searchType){
+    onSearch(searchType,searchKeyword){
         // console.log(searchKeyword,searchType);
         let listType=searchKeyword===''?'list':'search';
         this.setState({

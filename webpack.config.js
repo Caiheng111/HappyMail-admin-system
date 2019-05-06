@@ -4,12 +4,15 @@ const path = require('path');
 const webpack=require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+let WEBPACK_ENV=process.env.WEBPACK_ENV ||'dev';
+console.log(WEBPACK_ENV);
 
 module.exports = {
   entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath:'/dist/',
+    publicPath:WEBPACK_ENV==='dev'
+    ? '/dist/':'//s.jianliwu.com/admin-ve-fe/dist/',
     filename: 'js/app.js'
   },
   resolve:{

@@ -17,7 +17,7 @@ class ListSearch extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            searchType:'productId',
+            searchType:'',
             searchKeyword:'',
         }
     }
